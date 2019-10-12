@@ -10,5 +10,6 @@ use PhutureProof\Database\AbstractDatabase;
  */
 class Sqlite extends AbstractDatabase
 {
+    protected static $_instance = null;
     protected static $dsn = 'sqlite:G:\\web-projects\\php-practices\\database\\database.sqlite';
 }

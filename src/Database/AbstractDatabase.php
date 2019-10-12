@@ -13,7 +13,7 @@ class AbstractDatabase extends PDOInterface
     /**
      * @var null|self $_instance
      */
-    private static $_instance = null;
+    protected static $_instance = null;
 
     /**
      * PDO like DSN string to connect to database
@@ -27,11 +27,11 @@ class AbstractDatabase extends PDOInterface
      */
     public static function getInstance(): self
     {
-        if (!self::$_instance) {
-            self::$_instance = new self(static::$dsn);
+        if (!static::$_instance) {
+            static::$_instance = new static(static::$dsn);
         }
 
-        return self::$_instance;
+        return static::$_instance;
     }
 
     /**
@@ -43,8 +43,6 @@ class AbstractDatabase extends PDOInterface
     {
         $stmt = $this->prepare($sql);
         $stmt->execute($parameters);
-
-        $data = $stmt->fetchAll(self::FETCH_OBJ) ?? null;
-        return $data;
+        return $stmt->fetchAll(self::FETCH_OBJ) ?? null;
     }
 }
