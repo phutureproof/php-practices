@@ -23,19 +23,4 @@ $todos = $db->runQuery("SELECT * FROM todos");
 // output a list of html based articles
 $display::RenderList($todos);
 $display::RenderButton('OK');
-$display::RenderButton('OKdfgdfgdfg', [
-    'success' => 'function() {
-            return "TCHYeeyyea";
-        }'
-]);
-$display::RenderButton('sdadasd');
-$display::RenderButton('dfgdfgdfOK');
-$display::RenderButton('OdsfsdfK');
-$display::RenderButton('OK', [
-    'success' => 'function() {
-            return "OK!";
-        }'
-]);
-$display::RenderButton('OfgdfgdfgK');
-$display::RenderButton('fghfghfghOK');
 echo microtime(1) - $st;
