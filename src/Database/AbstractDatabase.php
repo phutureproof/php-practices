@@ -13,7 +13,7 @@ class AbstractDatabase extends PDOInterface
     /**
      * @var null|self $_instance
      */
-    private static $_instance = null;
+    protected static $_instance = null;
 
     /**
      * PDO like DSN string to connect to database
