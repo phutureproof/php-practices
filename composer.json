@@ -1,0 +1,17 @@
+{
+  "name": "phuture-proof/database",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "config": {
+    "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-4": {
+      "PhutureProof\\": "src/"
+    }
+  },
+  "require": {
+    "ext-pdo": "*"
+  }
+}
